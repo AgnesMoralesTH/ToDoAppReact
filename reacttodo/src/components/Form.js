@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Form = ({setInputText, todos, setTodos, inputText}) =>{
+const Form = ({setInputText, todos, setTodos, inputText, setStatus}) =>{
     const inputTextHandler = (e) =>{
         //e tells you about the event and the value tells you the value
        
@@ -13,6 +13,9 @@ const Form = ({setInputText, todos, setTodos, inputText}) =>{
             ...todos,{ text: inputText, completed:false, id: Math.random() * 1000 }
         ]);
         setInputText("");
+    };
+    const statusHandler = (e) =>{
+        setStatus(e.target.value);
     }
     return(
         <form>
